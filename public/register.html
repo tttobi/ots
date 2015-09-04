@@ -1,0 +1,150 @@
+  <div class="row" id="head">
+		<div class="large-12 columns">
+      <h2 class="black">{{message}}</h2>
+			<p class="light">Willkommen bei den Orientierungstagen des Fachschaftrats Elektrotechnik, Informatik und Communication and Multimedia Design der Fachhochschule Aachen.</p>
+		</div>
+	</div>
+  
+ 
+<form name="registrationForm" class="custom" autocomplete="off" novalidate ng-submit="submit()">
+
+    <div class="row">
+      <div class="large-12 columns">
+		<p class="medium">Bevor es losgehen kann, brauchen wir ein paar Informationen &uuml;ber dich.</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="large-12 columns">
+        <label>Vorname</label>
+        <input type="text" name="firstname" ng-model="data.firstname" required>
+        <div class="error" 
+             ng-show="registrationForm.firstname.$dirty && registrationForm.firstname.$invalid">
+          <small class="error" 
+              ng-show="registrationForm.firstname.$error.required">
+              Wir brauchen deinen Vornamen.
+          </small>
+        </div>
+      </div>
+    </div>
+  
+    <div class="row">
+      <div class="large-12 columns">
+        <label>Nachname</label>
+        <input type="text" name="name" ng-model="data.name" required>
+        <div class="error" 
+             ng-show="registrationForm.name.$dirty && registrationForm.name.$invalid">
+          <small class="error" 
+              ng-show="registrationForm.name.$error.required">
+              Wir brauchen auch deinen Nachnamen.
+          </small>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="large-12 columns">
+        <label>Geburtstag</label>
+        <input type="text" name="birthday" ng-model="data.birthday" placeholder="TT.MM.JJJJ" ng-pattern="/^[0-9]{1,2}\.[0-9]{1,2}\.(19|20)[0-9]{2}$/" required>
+        <div class="error" 
+             ng-show="registrationForm.birthday.$dirty && registrationForm.birthday.$invalid">
+          <small class="error" 
+              ng-show="registrationForm.birthday.$error.required">
+              Wir brauchen leider auch deinen Geburtstag.
+          </small>
+          <small class="error" 
+              ng-show="registrationForm.birthday.$error.pattern">
+              Bitte gibt deinen Geburtstag in der Form TT.MM.JJJJ an.
+          </small>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="large-12 columns">
+        <label>Geschlecht</label>
+        <div class="switch">
+          <input id="z" name="switch-z" type="radio" checked="checked" ng-click="updateGender(true)">
+          <label for="z">M&auml;nnlich</label>
+        
+          <input id="z1" name="switch-z" type="radio" ng-click="updateGender(false)">
+          <label for="z1">Weiblich</label>
+        
+          <span></span>
+      </div>
+      </div>
+    </div>  
+
+
+
+    <div class="row">
+      <div class="large-12 columns">
+        <label>Studiengang</label>
+        <select ng-model="data.course">
+          <option value="et">Elektrotechnik</option>
+          <option value="inf">Informatik</option>
+          <option value="cmd">Communication and Multimedia Design</option>
+        </select>
+        <hr />
+      </div>
+    </div>
+  
+    <div class="row">
+      <div class="large-12 columns">
+        <label>Matrikelnummer</label>
+        <input type="text" name="mtrnr" ng-model="data.mtrnr" ng-pattern="/^[1-9][0-9]{5,}$/">
+        <div class="error" 
+             ng-show="registrationForm.mtrnr.$dirty && registrationForm.mtrnr.$invalid">
+          <small class="error" 
+              ng-show="registrationForm.mtrnr.$error.pattern">
+              Deine Matrikelnummer sollte mindestens 6-stellig sein...
+          </small>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="large-12 columns">
+        <label>EMail-Adresse</label>
+        <input type="email" name="email" ng-model="data.email" required>
+        <div class="error" 
+             ng-show="registrationForm.email.$dirty && registrationForm.email.$invalid">
+          <small class="error" 
+              ng-show="registrationForm.email.$error.required">
+              Wir brauchen deine EMail-Adresse um mit dir w&auml;hrend der Orientierungstage in Notf&auml;llen Kontakt aufnehmen zu k&ouml;nnen.
+          </small>
+          <small class="error" 
+              ng-show="registrationForm.email.$error.email">
+              Dies ist keine g&uuml;ltige EMail-Adresse...
+          </small>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="large-12 columns">
+        <label>Mobilnummer</label>
+        <input type="text" name="phone" ng-model="data.phone" ng-pattern="/^[0-9]+$/">
+        <div class="error" 
+             ng-show="registrationForm.phone.$dirty && registrationForm.phone.$invalid">
+          <small class="error" 
+              ng-show="registrationForm.phone.$error.pattern">
+              Wenn du uns deine Telefonnummer gibst, sollte sie auch nur aus Zahlen bestehen ;)
+          </small>
+        </div>
+        <hr />
+      </div>
+    </div>
+
+        <div class="row">
+      <div class="large-12 columns">
+        <p class="medium" ng-hide="registrationForm.$invalid">Zu guter Letzt, kontrolliere bitte noch einmal deine Angaben vor dem Abschicken, Danke!</p>
+        <p class="medium" ng-show="registrationForm.$invalid">Du hast leider noch nicht alle notwendigen Felder ausgef&uuml;llt.</p>
+      </div>
+      <div class="large-12 columns">
+        <button type="submit" class="button success" ng-disabled="registrationForm.$invalid">Abschicken</button>
+        <button ng-click="backToStart()" class="button success">Zur&uuml;ck zum Start</button>
+      </div>
+    </div>
+
+
+</form>

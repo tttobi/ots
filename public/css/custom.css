@@ -1,0 +1,188 @@
+html {
+	margin: 20px;
+	background: #FFFFEB;
+}
+
+body {
+	font-family: 'DinProMedium', sans-serif;
+	text-rendering: optimizeLegibility;
+	text-transform: uppercase;
+	background: #fae9b1;
+	color: #eb634b;
+	position: relative;
+	margin: 0 auto;
+	max-width: 920px;
+}
+
+.error small.error {
+  font-weight: normal;
+}
+
+p {
+	text-shadow: 0 1px 0 #efbe86;
+}
+
+hr {
+	color: transparent;
+	background: transparent;
+	border-color: transparent;
+	border-width: 4px;
+}
+
+ul li {
+  font-family: 'DinProMedium', sans-serif;
+	text-transform: none;	
+}
+
+.black, h3 {
+	font-family: 'DinProBold', sans-serif;
+	text-transform: none;
+}
+
+.medium {
+	font-family: 'DinProMedium', sans-serif;
+	text-transform: none;	
+  font-size: 1.2em;
+}
+
+.light {
+	font-family: 'DinProLight', sans-serif;
+	text-transform: none;
+  font-size: 1.2em;
+  margin-top: -10px;
+}
+
+.badge {
+	position: absolute;
+	left: 20px;
+	top: -20px;
+	width: 84px;
+	height: 144.2px;
+	background-position: 50% 50%;
+}
+
+.switch label {
+  font-style: normal;
+  font-weight: 500 !important;
+}
+
+#head {
+	padding-left: 110px;
+}
+
+.intro
+{
+     text-align:center;
+}
+
+ button.success, .button.success {
+    background-color: #eb634b;
+    border-color: transparent;
+    border-style: none;
+    color: #FFFFEB; }
+    button.success:hover, button.success:focus, .button.success:hover, .button.success:focus {
+      background-color: #b64d3a; }
+    button.success:hover, button.success:focus, .button.success:hover, .button.success:focus {
+      color: #FFFFEB; }
+
+
+/* animation */
+.animate-enter {
+	-webkit-transition: 1s linear opacity; /* Chrome */
+	transition: 1s linear opacity;
+	opacity: 0;
+}
+ 
+.animate-enter.animate-enter-active {
+	opacity: 1;
+}
+
+
+.custom .row, #head .light, #head h2, .mybuttons {
+	-webkit-transition: .25s linear all; /* Chrome */
+	transition: .25s linear all;
+}
+
+#head.groups h2 {
+  margin: -30px 0 0 0;
+}
+
+@media only screen  {
+
+.badge {
+	position: absolute;
+	left: 16px;
+	top: -105px;
+	width: 84px;
+	height: 144.2px;
+	background-position: 50% 50%;
+}
+  
+.custom .row {
+	padding-left: 0px;
+}
+
+#head h2 {
+  margin-top: 50px;
+  margin-left: -110px;
+}
+  
+#head .light {
+  margin-left: -110px;
+}
+
+  .mybuttons {
+    margin-left: 0px;
+  }
+  
+  #head.groups {
+    text-align: center;
+    padding-left: 0;
+  }
+#head.groups .medium {
+  margin-top: 50px;
+  margin-left: 0px;
+  }
+
+}
+
+
+@media only screen and (min-width: 768px) {
+
+  .mybuttons {
+    margin-left: 109px;
+  }
+  
+.badge {
+	position: absolute;
+	left: 16px;
+	top: -20px;
+	width: 84px;
+	height: 144.2px;
+	background-position: 50% 50%;
+}
+  
+.custom .row {
+	padding-left: 0px;
+}
+
+#head .light {
+  margin-left: 0px;
+}
+#head h2 {
+  margin-top: 10px;
+  margin-left: 0px;
+}
+  
+    #head.groups {
+    text-align: left;
+    padding-left: 110px;
+  }
+  
+
+  
+#head.groups .medium {
+    margin-top: 20px;
+  margin-left: 0px;
+  }
+}

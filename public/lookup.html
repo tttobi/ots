@@ -1,0 +1,25 @@
+  <div class="row" id="head">
+		<div class="large-12 columns">
+      <h2 class="black">Senil?</h2>
+      <p class="light">Du hast also den Namen deiner Gruppe vergessen... welch ein Gl&uuml;ck das du ihn hier nochmal erfragen kannst. Du musst nur deine EMail-Adresse angeben und best&auml;tigen.</p>
+		</div>
+	</div>
+
+<form name="lookupForm" class="custom" autocomplete="off" novalidate ng-submit="submit()">
+    <div class="row">
+      <div class="large-12 columns">
+        <label>EMail-Adresse</label>
+        <input type="email" name="email" ng-model="data.email" required>
+        <div class="error" 
+             ng-show="lookupForm.email.$dirty && lookupForm.email.$invalid">
+          <small class="error" 
+              ng-show="lookupForm.email.$error.email">
+              Dies ist keine g&uuml;ltige EMail-Adresse...
+          </small>
+        </div>
+      </div>
+      <div class="large-12 columns">
+        <button type="submit" class="button success" ng-disabled="lookupForm.$invalid">Abschicken</button>
+        <button ng-click="backToStart()" class="button success">Zur&uuml;ck zum Start</button>
+      </div>
+    </div>

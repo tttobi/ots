@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<!--[if IE 8]> 				 <html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" ng-app="ETITCMD-Admin"> <!--<![endif]-->
+
+<head>
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>OT2013 Live</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="css/foundation.css">
+  <link rel="stylesheet" href="css/fonts.css">
+  <link rel="stylesheet" href="css/custom.css">
+  <link rel="stylesheet" href="css/datepicker.css">
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="js/vendor/custom.modernizr.js"></script>
+</head>
+<body ng-controller="LiveCtrl">
+
+<img class="badge" src="img/lasche.png"/>
+
+	<div class="row" id="head">
+		<div class="large-12 columns">
+			<h2 class="black">OT2013 Live</h2>
+			<p class="light">Aktuelle Daten von der Erstie Registrierung. Statistik FTW.</p>
+		</div>
+  </div>
+  <div class="row">
+    <div class="large-6 columns">
+      <div google-chart chart="genderChart" style="{{genderChart.cssStyle}}"></div>
+    </div>
+    <div class="large-6 columns">
+      <div google-chart chart="courseChart" style="{{courseChart.cssStyle}}"></div>
+    </div>
+	</div>
+  
+  <div class="row" ng-repeat="group in groups" ng-hide="group.members.length == 0">
+      <div class="large-8 columns">
+        <h3>{{group.name}} ({{group.members.length}})</h3>
+        <ul style="padding: 20px;">
+          <li ng-repeat="member in group.members | orderBy:'course'">{{member.firstname}} {{member.name}} ({{member.course}})</li>
+        </ul>
+      </div>
+      <div class="large-4 columns">
+      <div google-chart chart="group.genderChart" style="{{group.genderChart.cssStyle}}"></div>
+        <div google-chart chart="group.courseChart" style="{{group.courseChart.cssStyle}}"></div>
+    </div>
+    </div>
+ 
+  <script src="js/vendor/jquery.js"></script>
+  <script src="js/foundation.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+  <script src="js/ng-google-chart.js"></script>
+  <!--
+  
+  <script src="js/foundation/foundation.js"></script>
+  
+  <script src="js/foundation/foundation.alerts.js"></script>
+  
+  <script src="js/foundation/foundation.clearing.js"></script>
+  
+  <script src="js/foundation/foundation.cookie.js"></script>
+  
+  <script src="js/foundation/foundation.dropdown.js"></script>
+
+  <script src="js/foundation/foundation.forms.js"></script>
+  
+  <script src="js/foundation/foundation.joyride.js"></script>
+  
+  <script src="js/foundation/foundation.magellan.js"></script>
+  
+  <script src="js/foundation/foundation.orbit.js"></script>
+  
+  <script src="js/foundation/foundation.reveal.js"></script>
+  
+  <script src="js/foundation/foundation.section.js"></script>
+  
+  <script src="js/foundation/foundation.tooltips.js"></script>
+  
+  <script src="js/foundation/foundation.topbar.js"></script>
+  
+  <script src="js/foundation/foundation.interchange.js"></script>
+  
+  <script src="js/foundation/foundation.placeholder.js"></script>
+  
+  <script src="js/foundation/foundation.abide.js"></script>
+  
+  -->
+  
+  <script>
+    $(document).foundation();
+  </script>
+  <script src="js/admin.js"></script>
+</body>
+</html>
